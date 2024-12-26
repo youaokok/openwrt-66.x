@@ -250,7 +250,6 @@ CONFIG_M686=y
 # CONFIG_MEFFICEON is not set
 # CONFIG_MELAN is not set
 # CONFIG_MEM_ALLOC_PROFILING is not set
-# CONFIG_MEMCG_V1 is not set
 # CONFIG_MFD_INTEL_LPSS_PCI is not set
 # CONFIG_MGEODEGX1 is not set
 # CONFIG_MGEODE_LX is not set
