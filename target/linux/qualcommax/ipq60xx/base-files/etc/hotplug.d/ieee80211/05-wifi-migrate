@@ -6,12 +6,17 @@
 
 . /lib/functions.sh
 
+version_lt()
+{
+  test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1";
+}
+
 check_kernel()
 {
-	local kernel_current=$(uname -r)
-	if [ ${kernel_current//./} -lt "6600" ]; then
-	  return 1
-	fi
+  local kernel_current=$(uname -r)
+  if version_lt $kernel_current "6.6"; then
+    return 1
+  fi
 }
 
 do_migrate_radio()
