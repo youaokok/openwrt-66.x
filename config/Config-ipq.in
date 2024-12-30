@@ -32,7 +32,7 @@ config KERNEL_IPQ_MEM_PROFILE
 
 config KERNEL_SKB_RECYCLER
 	bool "Generic SKB recycling"
-	default y if KERNEL_IPQ_MEM_PROFILE > 256
+	default n
 
 choice KERNEL_SKB_RECYCLE_SIZE
 	prompt "SKB recycler size"
@@ -58,7 +58,7 @@ config KERNEL_SKB_RECYCLE_SIZE
 config KERNEL_SKB_RECYCLER_MULTI_CPU
 	bool "Cross-CPU recycling for CPU-locked workloads"
 	depends on KERNEL_SKB_RECYCLER
-	default y
+	default n
 
 config KERNEL_SKB_RECYCLER_PREALLOC
 	bool "Enable preallocation of SKBs (For SFE not NSS)"
