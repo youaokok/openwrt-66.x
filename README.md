@@ -22,7 +22,6 @@
 ---
 
 ## 使用方法
-- 推荐使用[24.10](https://github.com/LiBwrt-op/openwrt-6.x/tree/openwrt-24.10)分支
 
 ### [云编译](https://github.com/breeze303/openwrt-ci)
 
@@ -61,7 +60,7 @@
 （-j 后面是线程数，为便于排除错误推荐用单线程）
 
    ```bash
-   make download -j8
+   make download -j$(nproc)
    make -j1 V=s
    ```
 
