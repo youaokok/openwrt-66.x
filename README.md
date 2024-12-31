@@ -50,7 +50,7 @@
 3. 下载源代码，更新 feeds 并选择配置
 
    ```bash
-   git clone --depth 1 -b main --single-branch https://github.com/LiBwrt-op/openwrt-6.x.git
+   git clone --depth 1 --single-branch https://github.com/LiBwrt-op/openwrt-6.x.git
    cd openwrt-6.x
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make menuconfig
@@ -68,7 +68,7 @@
 
    ```bash
    cd openwrt-6.x
-   git fetch && git reset --hard origin/main
+   git fetch && git reset --hard origin/kernel-6.12
    ./scripts/feeds update -a && ./scripts/feeds install -a
    make menuconfig
    make V=s -j$(nproc)
