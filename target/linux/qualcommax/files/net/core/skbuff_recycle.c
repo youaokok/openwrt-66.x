@@ -682,10 +682,10 @@ void skb_recycler_print_all_lists(void)
 {
 
 	unsigned long flags;
-	int cpu;
+	struct sk_buff_head *h;
 #ifdef CONFIG_SKB_RECYCLER_MULTI_CPU
 	int i;
-	struct sk_buff_head *h;
+	int cpu;
 
 	cpu = get_cpu();
 	spin_lock_irqsave(&glob_recycler.lock, flags);
@@ -706,8 +706,8 @@ void skb_recycler_print_all_lists(void)
 
 	preempt_disable();
 	local_irq_save(flags);
-	h = &per_cpu(recycle_list, cpu);
-	skbuff_debugobj_print_skb_list(h->next, "Recycle List", cpu);
+	h = &get_cpu_var(recycle_list);
+	//skbuff_debugobj_print_skb_list(h->next, "Recycle List", cpu);
 
 	local_irq_restore(flags);
 	preempt_enable();
