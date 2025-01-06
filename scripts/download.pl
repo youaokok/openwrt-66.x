@@ -265,6 +265,8 @@ foreach my $mirror (@ARGV) {
 		}
 	} elsif ($mirror =~ /^\@OPENWRT$/) {
 		# use OpenWrt source server directly
+	} elsif ($mirror =~ /^\@IMMORTALWRT$/) {
+		# use ImmortalWrt source server directly
 	} elsif ($mirror =~ /^\@DEBIAN\/(.+)$/) {
 		projectsmirrors '@DEBIAN', $1;
 	} elsif ($mirror =~ /^\@APACHE\/(.+)$/) {
@@ -295,6 +297,7 @@ foreach my $mirror (@ARGV) {
 	}
 }
 
+projectsmirrors '@IMMORTALWRT';
 projectsmirrors '@OPENWRT';
 
 if (-f "$target/$filename") {
